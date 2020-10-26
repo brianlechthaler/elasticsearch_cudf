@@ -14,7 +14,7 @@ ElasticsearchAPIID = 'Your_Elasticsearch_API_ID'
 ElasticsearchAPIKey = 'Your_Elasticsearch_API_Key'
 # Set the host. Defaults to localhost over HTTPS
 ElasticsearchHost = 'https://localhost:9243'
-# Set default timeout to 5 minutes for large amounts of data or slow clusters that will take longer than 10sec to respond to our queries
+# Set default timeout to 5 minutes for large amounts of data or slow clusters that will take longer than the 10sec default to respond to our queries
 ElasticsearchQueryTimeoutInSeconds = 300
 
 # Create Elasticsearch connection object from variables specified above. 

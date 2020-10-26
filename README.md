@@ -11,6 +11,85 @@ You must have the following installed:
 * Any NVidia GPU since the Pascal architecture (just use AWS if you don't own an NVidia GPU)
 
 
+## Generating API Keys to authenticate to Elasticsearch using Kibana
+`POST /_security/api_key`
+
+
+`{`
+
+
+`  "name": "logstash-dev-ro-2",`
+
+
+`  "expiration": "100d",`
+
+
+`  "role_descriptors": {`
+
+
+`    "read_index_contents": {`
+
+
+`      "index": [`
+
+
+`        {`
+
+
+`          "names": "logstash-*",`
+
+
+`          "privileges": ["read", "view_index_metadata"]`
+
+
+`        }`
+
+
+`      ]`
+
+
+`    },`
+
+
+`    "read_cluster": {`
+
+
+`      "cluster": ["monitor", "read_ilm"]`
+
+
+`    },`
+
+
+`    "read_other_index_contents": {`
+
+
+`      "index": [`
+
+
+`        {`
+
+
+`          "names": "attack*",`
+
+
+`          "privileges": ["read","view_index_metadata"]`
+
+
+`        }`
+
+
+`      ]`
+
+
+`    }`
+
+
+`  }`
+
+
+`}`
+
+
 ## Contents
 
 ### Basic ETL with cuDF
